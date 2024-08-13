@@ -2,9 +2,9 @@ const express = require("express");
 const app = express();
 const port = 8080;
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+const petsRouter = require("./routes/pets");
+
+app.use("/api/pets", petsRouter);
 
 app.listen(port, () => {
   console.log(`Petmily Server app listening on port ${port}`);
